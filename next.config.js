@@ -1,17 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export', 
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    unoptimized: true, // disable Next.js image optimization for static export
+    unoptimized: true,
   },
   webpack: (config) => {
-    // Add support for importing SVGs as React components
     config.module.rules.push({
       test: /\.svg$/,
       use: ["@svgr/webpack"],
     });
-
     return config;
   },
 };
