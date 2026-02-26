@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 import ReadMore from '../ReadMore/ReadMore';
 import { ColorModeContext } from '../../../../pages/_app';
 import { useContext } from 'react';
-import img1 from '../../../../public/images/img1.png'
+import img1 from '../../../../public/images/img1.jpeg'
 
 const About = () => {
     const colorMode = useContext(ColorModeContext)
