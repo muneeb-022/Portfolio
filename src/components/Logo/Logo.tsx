@@ -2,6 +2,7 @@ import {Box} from '@mui/material'
 import CustomLink from '../Mui/CustomLink'
 import {useRouter} from 'next/router';
 import gsap from 'gsap';
+import Image from "next/image";
 
 const Logo = ({toggleDrawer, colorMode, color} : any) => {
     const router = useRouter()
@@ -25,12 +26,13 @@ const Logo = ({toggleDrawer, colorMode, color} : any) => {
             alignItems: 'center'
         }}>
 
-            <img
-                className={`${colorMode.mode === 'dark'
-                ? 'logoImg '
-                : ''}small`}
-                src=""
-                alt=""/>
+            <Image
+             className={`${colorMode.mode === "dark" ? "logoImg " : ""}small`}
+             src="/images/logo.png"   // <-- proper path do
+             alt=""
+             width={40}
+             height={40}
+            />
             <CustomLink color={color} fontWeight='600' text='M Muneeb Ur Rahman shahzad' href='/'/>
         </Box>
     )

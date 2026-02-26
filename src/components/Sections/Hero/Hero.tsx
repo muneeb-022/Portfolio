@@ -20,7 +20,7 @@ const Hero = () => {
     useEffect(() => {
         HeroSectionAnimation(q)
 
-    }, [])
+    }, [q])
 
     return (
         <Container
@@ -73,7 +73,7 @@ const Hero = () => {
                             maxWidth: '570px',
                             fontWeight: '300'
                         }}>
-                           Assalam O Alaikum ! It's me  Muneeb. I enjoy creating  websites and web/mobile apps, ones that suit your desires and needs using latest technologies and cleanest design patterns. Deploy the applications on the server and monitor it.
+                           Assalam O Alaikum ! I&apos;m me  Muneeb. I enjoy creating  websites and web/mobile apps, ones that suit your desires and needs using latest technologies and cleanest design patterns. Deploy the applications on the server and monitor it.
                         </Typography>
 
                         <Box

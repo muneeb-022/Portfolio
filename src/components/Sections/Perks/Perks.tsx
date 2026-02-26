@@ -24,6 +24,7 @@ import {
 
 gsap.registerPlugin(ScrollTrigger);
 
+// Centered container style
 export const centeredStyles = {
   alignItems: 'center',
   textAlign: 'center',
@@ -33,6 +34,7 @@ export const centeredStyles = {
   flexDirection: 'column'
 };
 
+// Full skills array
 const skillsArray = [
   { title: "Kotlin", Icon: SiKotlin },
   { title: "Flutter", Icon: SiFlutter },
@@ -47,58 +49,50 @@ const skillsArray = [
   { title: "Prometheus", Icon: SiPrometheus },
   { title: "Git", Icon: SiGit },
   { title: "GitHub", Icon: SiGithub },
-  { title: "CI/CD", Icon: SiGithub } // placeholder icon
+  { title: "CI/CD", Icon: SiGithub } // placeholder for CI/CD
 ];
 
-const Skills = () => {
-
+const Perks = () => {
   useEffect(() => {
-    MainTitleAnimation('.h1', '.h2')
+    MainTitleAnimation('.h1', '.h2');
   }, []);
 
   return (
     <>
       <Container
         id="skills"
-        maxWidth='lg'
+        maxWidth="lg"
         sx={{
           margin: '0 auto',
           my: '5em'
-        }}>
-
+        }}
+      >
         <Box sx={centeredStyles}>
-
+          {/* Section Title */}
           <Typography
-            className='h1 t25o0'
-            variant='h1'
-            fontWeight='600'
-            sx={{
-              fontSize: {
-                xs: '2.2em',
-                sm: '2.5em',
-                md: '3em'
-              }
-            }}>
+            className="h1 t25o0"
+            variant="h1"
+            fontWeight={600}
+            sx={{ fontSize: { xs: '2.2em', sm: '2.5em', md: '3em' } }}
+          >
             My Technical Skills
           </Typography>
 
           <Typography
-            variant='h2'
-            className='secondary h2'
+            variant="h2"
+            className="secondary h2"
             sx={{
               pt: '1.5em',
               transform: 'translateY(15px)',
               opacity: 0,
               maxWidth: '600px',
-              fontSize: {
-                xs: '.85em',
-                sm: '1em'
-              }
-            }}>
-            I build scalable backend systems, responsive frontends, mobile apps,
-            and production-ready DevOps pipelines.
+              fontSize: { xs: '.85em', sm: '1em' }
+            }}
+          >
+            I build scalable backend systems, responsive frontends, mobile apps, and production-ready DevOps pipelines.
           </Typography>
 
+          {/* Skills Grid */}
           <Box
             sx={{
               mt: '3em',
@@ -106,16 +100,16 @@ const Skills = () => {
               flexWrap: 'wrap',
               gap: '30px',
               justifyContent: 'center'
-            }}>
+            }}
+          >
             {skillsArray.map(skill => (
               <PerkCard
                 key={skill.title}
                 title={skill.title}
-                Icon={skill.Icon}
+                Icon={skill.Icon as React.ComponentType<{ size?: number }>} // type casting ensures TS compliance
               />
             ))}
           </Box>
-
         </Box>
       </Container>
 
@@ -124,4 +118,4 @@ const Skills = () => {
   );
 };
 
-export default Skills;
+export default Perks;

@@ -85,7 +85,7 @@ const About = () => {
                             }
                         }}
                             fontWeight='600'>
-                            About Me, I'm M Muneeb
+                            About Me, I&apos;m a developer
                         </Typography>
                         <Typography
                             variant='h2'
@@ -118,7 +118,6 @@ const About = () => {
                     </ReadMore>
                 </Grid>
             </Grid>
-
         </Container>
 
         </>

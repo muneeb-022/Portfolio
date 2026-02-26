@@ -1,28 +1,29 @@
 import { Box, Typography } from "@mui/material";
 import { IconType } from "react-icons";
+import React from "react";
 
 interface PerkCardProps {
   title: string;
-  Icon: IconType;
+  Icon: React.ComponentType<{ size?: number; style?: React.CSSProperties }>;
 }
 
-const PerkCard: React.FC<PerkCardProps> = ({ title, Icon }) => {
+const PerkCard = ({ title, Icon }: PerkCardProps) => {
   return (
     <Box
       sx={{
-        width: '150px',
-        padding: '1.5em',
-        borderRadius: '8px',
-        textAlign: 'center',
-        boxShadow: '0 5px 20px rgba(0,0,0,0.1)',
-        transition: '0.3s',
-        cursor: 'pointer',
+        width: "150px",
+        padding: "1.5em",
+        borderRadius: "8px",
+        textAlign: "center",
+        boxShadow: "0 5px 20px rgba(0,0,0,0.1)",
+        transition: "0.3s",
+        cursor: "pointer",
         "&:hover": {
-          transform: 'translateY(-5px)'
-        }
+          transform: "translateY(-5px)",
+        },
       }}
     >
-      <Icon style={{ fontSize: 40 }} />
+      <Icon size={40} />
 
       <Typography mt={1} fontWeight="500">
         {title}
