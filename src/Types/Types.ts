@@ -58,10 +58,10 @@ export interface IDrawerItem {
 }
 export interface IProjects {
 
-    img : string;
+    img? : string;
     title : string;
-    siteUrl : string;
-    repoUrl : string;
+    siteUrl? : string;
+    repoUrl? : string;
     description : string;
 
 }

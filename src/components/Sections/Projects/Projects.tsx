@@ -50,7 +50,6 @@ const Projects = ({ projectsArray }: ProjectsProps) => {
     <Box sx={{ overflowX: "hidden" }}>
       <Container id="ProjectSection" maxWidth="lg" sx={{ py: "6em" }}>
         <Grid container justifyContent="center">
-
           {/* Title */}
           <Grid item xs={12} sx={{ textAlign: "center" }}>
             <Typography
@@ -115,17 +114,12 @@ const Projects = ({ projectsArray }: ProjectsProps) => {
               >
                 <ProjectCard
                   className={`p${index}`}
-                  isReversed={false}
-                  siteUrl={project.siteUrl}
-                  repoUrl={project.repoUrl}
                   title={project.title}
-                  img={project.img || "/images/placeholder.png"}
                   description={project.description}
                 />
               </Box>
             ))}
           </Box>
-
         </Grid>
       </Container>
 
