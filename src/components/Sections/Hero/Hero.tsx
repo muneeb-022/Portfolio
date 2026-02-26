@@ -3,8 +3,6 @@ import gsap from 'gsap';
 import { useRef, useEffect } from 'react';
 import ScrollToPlugin from 'gsap/dist/ScrollToPlugin';
 import HeroSectionAnimation from '../../../gsap/HeroSectionAnimation';
-import Image from 'next/image';
-import img1 from '../../../../public/images/img1.jpeg';
 
 export const btnStyles = {
   padding: '.77em 1.5em',
@@ -50,7 +48,6 @@ const Hero = () => {
 
             <Typography
               variant="h2"
-              className="secondary t2 t25o0"
               sx={{
                 textAlign: 'left',
                 pt: '1.5em',
@@ -59,7 +56,7 @@ const Hero = () => {
                 fontWeight: 300,
               }}
             >
-              Assalam O Alaikum! I'm Muneeb. I enjoy creating websites and web/mobile apps using the latest technologies and clean design patterns. I deploy applications on servers and monitor them.
+              Assalam O Alaikum! I&apos;m Muneeb. I enjoy creating websites and web/mobile apps using the latest technologies and clean design patterns. I deploy applications on servers and monitor them.
             </Typography>
 
             <Box
@@ -127,13 +124,11 @@ const Hero = () => {
               overflow: 'hidden',
             }}
           >
-            <Image
-              src={img1}
+            {/* Static image for next export */}
+            <img
+              src="/images/personal.jpeg" // ✅ Path relative to public/
               alt="Personal Image"
-              layout="fill"
-              objectFit="cover"
-              className="img1"
-              unoptimized // ✅ prevents Netlify WASM errors
+              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
             />
 
             <Box
@@ -166,7 +161,7 @@ const Hero = () => {
               }}
             >
               <Typography sx={{ fontWeight: 300, fontSize: '.85em', padding: '1em' }}>
-                "From code to Cloud, I do anything"
+                &quot;From code to Cloud, I do anything&quot;
               </Typography>
             </Box>
           </Box>

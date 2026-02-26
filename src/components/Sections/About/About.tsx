@@ -1,9 +1,7 @@
 import { Container, Box, Grid, Typography } from '@mui/material';
-import Image from 'next/image';
 import ReadMore from '../ReadMore/ReadMore';
 import { ColorModeContext } from '../../../../pages/_app';
 import { useContext } from 'react';
-import img1 from '../../../../public/images/img1.jpeg';
 
 const About = () => {
   const colorMode = useContext(ColorModeContext);
@@ -20,15 +18,12 @@ const About = () => {
       <Grid
         container
         sx={{
-          justifyContent: {
-            sm: 'center',
-            md: 'space-between',
-          },
+          justifyContent: { sm: 'center', md: 'space-between' },
           alignItems: 'center',
           gap: { xs: '2em', md: 0 },
         }}
       >
-        {/* Image */}
+        {/* Image Section */}
         <Grid item xs={12} sm={12} md={4} lg={5}>
           <Box
             sx={{
@@ -45,6 +40,7 @@ const About = () => {
               overflow: 'hidden',
             }}
           >
+            {/* Decorative dots */}
             <Box
               sx={{
                 width: '100px',
@@ -61,17 +57,22 @@ const About = () => {
                 backgroundSize: '15px 13px',
               }}
             />
-            <Image
+
+            {/* Static image compatible with next export */}
+            <img
+              src="/images/personal.jpeg" // Path relative to public/
               alt="Personal Image"
-              src={img1}
-              layout="fill"
-              objectFit="cover"
-              unoptimized // important for Netlify builds
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                display: 'block',
+              }}
             />
           </Box>
         </Grid>
 
-        {/* Text */}
+        {/* Text Section */}
         <Grid item xs={12} sm={12} md={7} lg={7}>
           <Box sx={{ pb: '1em' }}>
             <Typography
