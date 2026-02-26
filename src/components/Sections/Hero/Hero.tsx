@@ -4,7 +4,7 @@ import {useRef, useEffect} from 'react';
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
 import HeroSectionAnimation from '../../../gsap/HeroSectionAnimation';
 import Image from 'next/image'
-import img1 from '../../../../public/images/img1.jpeg'
+import img1 from '../../../../public/images/img1.png'
 
 export const btnStyles = {
     padding: '.77em 1.5em',
