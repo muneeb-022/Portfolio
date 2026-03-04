@@ -1,10 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export', 
   reactStrictMode: true,
-  swcMinify: true,
+  output: 'export',  // ✅ this enables static export
   images: {
-    unoptimized: true,
+    unoptimized: true, // ✅ disables image optimization for static export
   },
   webpack: (config) => {
     config.module.rules.push({
